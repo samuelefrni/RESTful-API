@@ -6,12 +6,13 @@ const mongoose = require("mongoose");
 const server = http.createServer(app);
 
 mongoose
-  .connect(process.env.MONGODB)
+  .connect(process.env.MONGODB, { family: 4 })
   .then(() => {
+    console.log("MongoDB connected");
     server.listen(process.env.PORT, () => {
-      console.log(`Server running on http://127.0.0.1:${process.env.PORT}`);
+      console.log(`Server running on localhost:${process.env.PORT}`);
     });
   })
   .catch((error) => {
-    console.error(`Error connecting to MongoDB: ${error.message}`);
+    console.log(error.message);
   });
