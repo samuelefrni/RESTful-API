@@ -6,7 +6,7 @@ const postUser = async (req, res) => {
     const error = validateRequestFunction(userJoiSchema, req, res);
     if (error) return;
     const user = await User.create(req.body);
-    res.status(200).json({ user });
+    return res.status(200).json({ user });
   } catch (error) {
     return res.status(500).json({ errorMessage: error.message });
   }
@@ -24,7 +24,7 @@ const putUser = async (req, res) => {
         .json({ errorMessage: `User with ${id} id wasn't found` });
     }
     const upgradedUser = await User.findById(id);
-    res.status(200).json({ upgradedUser });
+    return res.status(200).json({ upgradedUser });
   } catch (error) {
     return res.status(500).json({ errorMessage: error.message });
   }
@@ -39,10 +39,38 @@ const deleteUser = async (req, res) => {
         .status(404)
         .json({ errorMessage: `User with ${id} id wasn't found` });
     }
-    res.status(200).json({ userToDelete });
+    return res.status(200).json({ userToDelete });
   } catch (error) {
     return res.status(500).json({ errorMessage: error.message });
   }
 };
 
-module.exports = { postUser, putUser, deleteUser };
+const getUser = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    if (id) {
+      const userById = await User.findById(id);
+
+      if (!userById) {
+        return res
+          .status(404)
+          .json({ errorMessage: `User with ${id} id wasn't found` });
+      }
+
+      return res.status(200).json({ userById });
+    }
+
+    const users = await User.find();
+
+    if (!users || users.length === 0) {
+      return res.status(404).json({ errorMessage: "There aren't any users" });
+    }
+
+    return res.status(200).json({ users });
+  } catch (error) {
+    return res.status(500).json({ errorMessage: error.message });
+  }
+};
+
+module.exports = { postUser, putUser, deleteUser, getUser };
