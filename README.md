@@ -1,4 +1,4 @@
-<div align="center"><img src="" width="150px"></div>
+<div align="center"><img src="./assets/img.png" width="150px"></div>
 <br />
 <div align="center">
   <h1 align="center">POF</h1>
@@ -34,21 +34,21 @@ The API must allow the insertion, modification and deletion of various entities,
 
 #### Product
 
-| Method | Endpoint          | Result                                                |
-| ------ | ----------------- | ----------------------------------------------------- |
-| GET    | api/product/:id?  | Show all products or the only one that matches the ID |
-| POST   | api/product       | Create a new product                                  |
-| PUT    | api/product/:id   | Modify the existing product that matches the ID       |
-| DELETE | api/product/:id   | Delete the existing product that matches the ID       |
+| Method | Endpoint         | Result                                                |
+| ------ | ---------------- | ----------------------------------------------------- |
+| GET    | api/product/:id? | Show all products or the only one that matches the ID |
+| POST   | api/product      | Create a new product                                  |
+| PUT    | api/product/:id  | Modify the existing product that matches the ID       |
+| DELETE | api/product/:id  | Delete the existing product that matches the ID       |
 
 #### User
 
-| Method | Endpoint       | Result                                             |
-| ------ | -------------- | -------------------------------------------------- |
-| GET    | api/user/:id?  | Show all users or the only one that matches the ID |
-| POST   | api/user       | Create a new user                                  |
-| PUT    | api/user/:id   | Modify the existing user that matches the ID       |
-| DELETE | api/user/:id   | Delete the existing user that matches the ID       |
+| Method | Endpoint      | Result                                             |
+| ------ | ------------- | -------------------------------------------------- |
+| GET    | api/user/:id? | Show all users or the only one that matches the ID |
+| POST   | api/user      | Create a new user                                  |
+| PUT    | api/user/:id  | Modify the existing user that matches the ID       |
+| DELETE | api/user/:id  | Delete the existing user that matches the ID       |
 
 #### Order
 
