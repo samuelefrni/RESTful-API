@@ -2,6 +2,9 @@
 <br />
 <div align="center">
   <h1 align="center">POF</h1>
+  <p align="center">
+    <a href="./assets/Progetto Node.js di Samuele Furnari.pdf">Presentation IT</a>
+  </p>
 </div>
 
 ## Introduction
@@ -20,7 +23,7 @@ To install and test this project, follow these steps:
 2. Install the dependencies: `npm install`
 3. Create a .env file with two variables: `PORT` and `MONGODB`
 4. In the `PORT` variable insert the port number of your server
-5. In the `MONGODB` variable insert the URI of your database [MongoDB Atlas]((https://www.mongodb.com/it-it/cloud/atlas/register)) or [MongoDB Compass](https://www.mongodb.com/try/download/compass)
+5. In the `MONGODB` variable insert the URI of your database [MongoDB Atlas](<(https://www.mongodb.com/it-it/cloud/atlas/register)>) or [MongoDB Compass](https://www.mongodb.com/try/download/compass)
 6. Run: `npm start`
 7. Test it: you can use a client for your test like: [Postman](https://www.postman.com/downloads/) or [Insomnia](https://insomnia.rest/download)
 
