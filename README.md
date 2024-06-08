@@ -12,6 +12,18 @@ Planty of Food (POF) is an agency that aim to make plant based foods more access
 
 The API must allow the insertion, modification and deletion of various entities, including products sold, users records and sales orders. Each of these entities have specific attributes like name's product, name, last name and email of the users and the composition of products and users for each order. Functions will need to be implemented to view all orders, with the possibility of filtering them by date of entry and the products they contain. The API must follow the REST standards, including naming, the correct use of HTTP methods and good management of response status codes. We have the flexibility to choose between to using a relational database like MySQL or a NoSQL database like MongoDb to store information.
 
+## Installation
+
+To install and test this project, follow these steps:
+
+1. Clone the repository: `https://github.com/samuelefrni/RESTful-API.git`
+2. Install the dependencies: `npm install`
+3. Create a .env file with two variables: `PORT` and `MONGODB`
+4. In the `PORT` variable insert the port number of your server
+5. In the `MONGODB` variable insert the URI of your database [MongoDB Atlas]((https://www.mongodb.com/it-it/cloud/atlas/register)) or [MongoDB Compass](https://www.mongodb.com/try/download/compass)
+6. Run: `npm start`
+7. Test it: you can use a client for your test like: [Postman](https://www.postman.com/downloads/) or [Insomnia](https://insomnia.rest/download)
+
 ## About my choice
 
 ### Languages
@@ -158,10 +170,6 @@ You can modify an existing order with a `PUT` request:
 You can delete an existing order with a `DELETE` request:
 
 `DELETE /api/order/:id`
-
-## Installation
-
-To install and test this project, follow these steps:
 
 ## Contributing
 
