@@ -64,12 +64,12 @@ const getProduct = async (req, res) => {
       return res.status(200).json({ productById });
     }
 
-    const product = await Product.find();
+    const limitValue = req.query.lm || 2;
+    const skipValue = req.query.sk || 0;
+    const product = await Product.find().limit(limitValue).skip(skipValue);
 
     if (!product) {
-      return res
-        .status(404)
-        .json({ errorMessage: "There aren't any products" });
+      return res.status(200).json({ product });
     }
 
     return res.status(200).json({ product });

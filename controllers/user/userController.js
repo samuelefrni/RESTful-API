@@ -61,10 +61,12 @@ const getUser = async (req, res) => {
       return res.status(200).json({ userById });
     }
 
-    const users = await User.find();
+    const limitValue = req.query.lm || 2;
+    const skipValue = req.query.sk || 0;
+    const users = await User.find().limit(limitValue).skip(skipValue);
 
     if (!users || users.length === 0) {
-      return res.status(404).json({ errorMessage: "There aren't any users" });
+      return res.status(200).json({ users });
     }
 
     return res.status(200).json({ users });

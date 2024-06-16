@@ -49,31 +49,37 @@ To install and test this project, follow these steps:
 
 #### Product
 
-| Method | Endpoint         | Result                                                |
-| ------ | ---------------- | ----------------------------------------------------- |
-| GET    | api/product/:id? | Show all products or the only one that matches the ID |
-| POST   | api/product      | Create a new product                                  |
-| PUT    | api/product/:id  | Modify the existing product that matches the ID       |
-| DELETE | api/product/:id  | Delete the existing product that matches the ID       |
+| Method | Endpoint          | Result                                                   |
+| ------ | ----------------- | -------------------------------------------------------- |
+| GET    | api/product/:id?  | Show all products or the only one that matches the ID    |
+| GET    | api/product?lm=10 | Show products with the limit that you prefer (default 2) |
+| GET    | api/product?sk=2  | Show products and skips as many as you want (default 0)  |
+| POST   | api/product       | Create a new product                                     |
+| PUT    | api/product/:id   | Modify the existing product that matches the ID          |
+| DELETE | api/product/:id   | Delete the existing product that matches the ID          |
 
 #### User
 
-| Method | Endpoint      | Result                                             |
-| ------ | ------------- | -------------------------------------------------- |
-| GET    | api/user/:id? | Show all users or the only one that matches the ID |
-| POST   | api/user      | Create a new user                                  |
-| PUT    | api/user/:id  | Modify the existing user that matches the ID       |
-| DELETE | api/user/:id  | Delete the existing user that matches the ID       |
+| Method | Endpoint       | Result                                                |
+| ------ | -------------- | ----------------------------------------------------- |
+| GET    | api/user/:id?  | Show all users or the only one that matches the ID    |
+| GET    | api/user?lm=10 | Show users with the limit that you prefer (default 2) |
+| GET    | api/user?sk=2  | Show users and skips as many as you want (default 0)  |
+| POST   | api/user       | Create a new user                                     |
+| PUT    | api/user/:id   | Modify the existing user that matches the ID          |
+| DELETE | api/user/:id   | Delete the existing user that matches the ID          |
 
 #### Order
 
-| Method | Endpoint       | Result                                        |
-| ------ | -------------- | --------------------------------------------- |
-| GET    | api/order/:id? | Show all order or the only one that matche ID |
-| GET    | api/order?date | Show orders filtered by date                  |
-| POST   | api/order      | Create a new order                            |
-| PUT    | api/order/:id  | Modify the existing order that matches the ID |
-| DELETE | api/order/:id  | Delete the existing order that matches the ID |
+| Method | Endpoint        | Result                                                 |
+| ------ | --------------- | ------------------------------------------------------ |
+| GET    | api/order/:id?  | Show all order or the only one that matche ID          |
+| GET    | api/order?lm=10 | Show orders with the limit that you prefer (default 2) |
+| GET    | api/order?sk=2  | Show orders and skips as many as you want (default 0)  |
+| GET    | api/order?date  | Show orders filtered by date                           |
+| POST   | api/order       | Create a new order                                     |
+| PUT    | api/order/:id   | Modify the existing order that matches the ID          |
+| DELETE | api/order/:id   | Delete the existing order that matches the ID          |
 
 ## Usage
 

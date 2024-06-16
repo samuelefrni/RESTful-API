@@ -52,10 +52,15 @@ const getOrder = async (req, res) => {
   try {
     const { date } = req.query;
 
-    const orders = await Order.find().populate("products users");
+    const limitValue = req.query.lm || 2;
+    const skipValue = req.query.sk || 0;
+    const orders = await Order.find()
+      .populate("products users")
+      .limit(limitValue)
+      .skip(skipValue);
 
     if (!orders || orders.length === 0) {
-      return res.status(404).json({ errorMessage: `Orders weren't found` });
+      return res.status(200).json({ orders });
     }
 
     if (date) {
