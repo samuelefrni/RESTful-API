@@ -48,6 +48,7 @@ const deleteUser = async (req, res) => {
 const getUser = async (req, res) => {
   try {
     const { id } = req.params;
+    const { lm, sk } = req.query;
 
     if (id) {
       const userById = await User.findById(id);
@@ -61,13 +62,9 @@ const getUser = async (req, res) => {
       return res.status(200).json({ userById });
     }
 
-    const limitValue = req.query.lm || 2;
-    const skipValue = req.query.sk || 0;
+    const limitValue = parseInt(lm) || 2;
+    const skipValue = parseInt(sk) || 0;
     const users = await User.find().limit(limitValue).skip(skipValue);
-
-    if (!users || users.length === 0) {
-      return res.status(200).json({ users });
-    }
 
     return res.status(200).json({ users });
   } catch (error) {

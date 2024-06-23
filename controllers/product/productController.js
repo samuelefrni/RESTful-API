@@ -51,6 +51,7 @@ const deleteProduct = async (req, res) => {
 const getProduct = async (req, res) => {
   try {
     const { id } = req.params;
+    const { lm, sk } = req.query;
 
     if (id) {
       const productById = await Product.findById(id);
@@ -64,13 +65,9 @@ const getProduct = async (req, res) => {
       return res.status(200).json({ productById });
     }
 
-    const limitValue = req.query.lm || 2;
-    const skipValue = req.query.sk || 0;
+    const limitValue = parseInt(lm) || 2;
+    const skipValue = parseInt(sk) || 0;
     const product = await Product.find().limit(limitValue).skip(skipValue);
-
-    if (!product) {
-      return res.status(200).json({ product });
-    }
 
     return res.status(200).json({ product });
   } catch (error) {
